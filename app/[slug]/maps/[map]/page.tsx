@@ -23,10 +23,10 @@ const GameMap = () => {
         }));
     }, [dispatch, path])
 
-    const [, slug, mapSlug] = path.split("/");
+
     return (
         <div className='w-full flex min-h-screen'>
-            <SideBar slug={slug} />
+            <SideBar />
             <Map />
         </div>
     )

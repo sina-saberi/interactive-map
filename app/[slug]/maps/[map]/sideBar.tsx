@@ -2,15 +2,14 @@
 import { useAppDispatch, useAppSelector } from '@/app/src/hooks/useRedux';
 import React from 'react'
 import Filter from './filter';
-import { addListOfFilters, clearAllFilters, toggleCategory, toggleChecked } from '@/app/src/store/slices/filters';
+import { addListOfFilters, clearAllFilters, toggleCategories, toggleCategory, toggleChecked } from '@/app/src/store/slices/filters';
+import { usePathname } from 'next/navigation';
 
-interface SideBarProps {
-    slug?: string;
-}
-const SideBar = ({ slug }: SideBarProps) => {
+const SideBar = () => {
+    const path = usePathname();
+    const [, slug] = path.split("/");
     const { map } = useAppSelector(x => x.map);
     const { categories, checked } = useAppSelector(x => x.filters);
-    const { pointers } = useAppSelector(x => x.pointer);
     const dispatch = useAppDispatch();
     const [search, setSearch] = React.useState("");
 
@@ -26,7 +25,7 @@ const SideBar = ({ slug }: SideBarProps) => {
     if (map) {
         const { groups, locations } = map;
         return (
-            <div className='border-r px-10 pr-20 overflow-y-auto overflow-x-hidden max-h-screen  bg-gray-300 shadow-md'>
+            <div className='border-r w-[450px] px-5 flex-shrink-0  overflow-y-auto overflow-x-hidden max-h-screen  bg-gray-300 shadow-md'>
                 <link href={`https://cdn.mapgenie.io/css/themes/${slug}.css`} rel='stylesheet' />
                 <div className='flex items-center justify-center mt-4'>
                     <button className='border px-2 py-1' onClick={() => dispatch(clearAllFilters())}>show all</button>
@@ -54,7 +53,7 @@ const SideBar = ({ slug }: SideBarProps) => {
                     </div>
                 )}
 
-                <div className='mt-5 flex flex-col gap-3 flex-shrink-0 py-10'>
+                <div className='mt-5 pb-10'>
                     <Filter name='global' >
                         <Filter.FilterItem
                             badge={getDoneItems}
@@ -63,7 +62,7 @@ const SideBar = ({ slug }: SideBarProps) => {
                             onClick={() => dispatch(toggleChecked())} />
                     </Filter>
                     {groups.filter(x => x.categories.length > 0).map(group => (
-                        <Filter name={group.title} key={group.id} >
+                        <Filter onGroupClick={x => dispatch(toggleCategories({ hide: x, ids: group.categories.map(x => x.id) }))} name={group.title} key={group.id} >
                             {group.categories.map(category => (
                                 <Filter.FilterItem
                                     key={category.id}

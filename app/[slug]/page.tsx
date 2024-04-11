@@ -19,7 +19,7 @@ const GameMaps = () => {
         <main className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 p-4'>
             {maps?.map((x, i) => (
                 <div key={i} className='h-72 '>
-                    <Link href={`${path}/${x.slug}`} className='text-blue-400 h-full  text-center flex items-center justify-start flex-col gap-3 hover:bg-gray-200/15 rounded-md p-4'>
+                    <Link href={`${path}/maps/${x.slug}`} className='text-blue-400 h-full  text-center flex items-center justify-start flex-col gap-3 hover:bg-gray-200/15 rounded-md p-4'>
                         <Image className='border rounded-md' src={`https://cdn.mapgenie.io/images/games/assassins-creed-2/maps/${x.slug}.jpg`} alt={x.slug} width={300} height={300} />
                         {x.title}
                     </Link>
