@@ -27,6 +27,7 @@ const SideBar = () => {
         return (
             <div className='border-r w-[450px] px-5 flex-shrink-0  overflow-y-auto overflow-x-hidden max-h-screen  bg-gray-300 shadow-md'>
                 <link href={`https://cdn.mapgenie.io/css/themes/${slug}.css`} rel='stylesheet' />
+                <link href={`https://cdn.mapgenie.io/css/themes/icons/${slug}-icons.css`} rel="stylesheet" />
                 <div className='flex items-center justify-center mt-4'>
                     <button className='border px-2 py-1' onClick={() => dispatch(clearAllFilters())}>show all</button>
                     <button className='border px-2 py-1' onClick={() => dispatch(addListOfFilters(Object.values(map.categories).map(x => x.id)))}>hide all</button>

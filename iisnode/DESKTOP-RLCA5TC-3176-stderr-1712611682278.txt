@@ -1,2 +1,0 @@
-Application has thrown an uncaught exception and is terminated:
-Error: ENOENT: no such file or directory, open 'D:\code\assassin2-map\.next\BUILD_ID'

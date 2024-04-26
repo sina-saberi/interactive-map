@@ -9,7 +9,7 @@ interface InitialState {
 }
 
 const initialState: InitialState = {
- 
+
 }
 
 export const getGameMaps = createAsyncThunk("map/getMaps", async (slug: string) => {
@@ -40,6 +40,11 @@ const mapSlice = createSlice({
     initialState,
     reducers: {},
     extraReducers(builder) {
+        builder.addCase(getGameMaps.pending, (state) => {
+            state.maps = undefined;
+            state.map = undefined;
+        });
+
         builder.addCase(getGameMaps.fulfilled, (state, action) => {
             state.maps = action.payload;
         });
