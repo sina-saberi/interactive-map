@@ -4,6 +4,7 @@ import React from 'react'
 import Filter from './filter';
 import { addListOfFilters, clearAllFilters, toggleCategories, toggleCategory, toggleChecked } from '@/app/src/store/slices/filters';
 import { usePathname } from 'next/navigation';
+import { resetMap } from '@/app/src/store/slices/map';
 
 const SideBar = () => {
     const path = usePathname();
@@ -21,6 +22,13 @@ const SideBar = () => {
         return [map!.locations.filter(x => x.category_id === id).length, map!.locations.filter(x => x.category_id === id && x.checked).length]
     }, [map])
 
+    const onReset = React.useCallback(async () => {
+        const result = confirm("are you shure you want to reset this map?");
+        if (result && slug) {
+            dispatch(resetMap(slug));
+        }
+    }, [dispatch, slug])
+
 
     if (map) {
         const { groups, locations } = map;
@@ -31,6 +39,7 @@ const SideBar = () => {
                 <div className='flex items-center justify-center mt-4'>
                     <button className='border px-2 py-1' onClick={() => dispatch(clearAllFilters())}>show all</button>
                     <button className='border px-2 py-1' onClick={() => dispatch(addListOfFilters(Object.values(map.categories).map(x => x.id)))}>hide all</button>
+                    <button className='border px-2 py-1' onClick={onReset}>reset</button>
                 </div>
 
                 <div className='flex mt-4 mx-auto'>

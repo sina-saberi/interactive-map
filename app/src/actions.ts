@@ -48,6 +48,16 @@ export const checkLocation = async (slug: string, id: number) => {
     return data;
 }
 
+export const reset = async (slug: string) => {
+    const data = await getJsonFile(slug);
+    data.locations.map(x => {
+        delete x.checked;
+        return x;
+    });
+    saveJsonFile(slug, data);
+    return data;
+}
+
 export const getMaps = async (slug: string) => {
     const data = await getJsonFile(slug);
     return data.maps;

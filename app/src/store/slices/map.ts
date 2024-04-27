@@ -1,5 +1,5 @@
 import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { checkLocation, getMapAction, getMaps } from "../../actions";
+import { checkLocation, getMapAction, getMaps, reset } from "../../actions";
 import { Map, MapData } from "../../models";
 
 interface InitialState {
@@ -33,6 +33,10 @@ interface toggleLocationProps {
 }
 export const toggleLocation = createAsyncThunk("map/toggleLocation", async ({ id, slug }: toggleLocationProps) => {
     return await checkLocation(slug, id);
+});
+
+export const resetMap = createAsyncThunk("map/reset", async (slug: string) => {
+    return await reset(slug);
 })
 
 const mapSlice = createSlice({
@@ -40,11 +44,13 @@ const mapSlice = createSlice({
     initialState,
     reducers: {},
     extraReducers(builder) {
+        builder.addCase(resetMap.fulfilled, (state, action) => {
+            state.map = action.payload;
+        })
         builder.addCase(getGameMaps.pending, (state) => {
             state.maps = undefined;
             state.map = undefined;
         });
-
         builder.addCase(getGameMaps.fulfilled, (state, action) => {
             state.maps = action.payload;
         });
