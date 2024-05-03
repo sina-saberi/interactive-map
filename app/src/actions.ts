@@ -72,3 +72,10 @@ export const getMapPointers = async (...slug: string[]) => {
     const data = await getJsonFile<Record<string, any>>("pointers/" + slug.join("/"));
     return data
 }
+
+export const getTile = async (patten: string) => {
+    //assassins-creed-2/italy/default-v3/{z}/{x}/{y}.png
+    //https://tiles.mapgenie.io/games/${tileSet.pattern}
+
+    return "";
+}

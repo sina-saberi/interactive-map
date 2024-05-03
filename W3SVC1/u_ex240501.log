@@ -1,0 +1,29 @@
+#Software: Microsoft Internet Information Services 10.0
+#Version: 1.0
+#Date: 2024-05-01 22:21:37
+#Fields: date time s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs(User-Agent) cs(Referer) sc-status sc-substatus sc-win32-status time-taken
+2024-05-01 22:21:37 ::1 GET / - 3500 - ::1 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/124.0.0.0+Safari/537.36 - 500 24 50 29
+2024-05-01 22:21:56 ::1 GET / - 3500 - ::1 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/124.0.0.0+Safari/537.36 - 500 24 50 0
+#Software: Microsoft Internet Information Services 10.0
+#Version: 1.0
+#Date: 2024-05-01 22:22:12
+#Fields: date time s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs(User-Agent) cs(Referer) sc-status sc-substatus sc-win32-status time-taken
+2024-05-01 22:22:12 ::1 GET / - 3500 - ::1 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/124.0.0.0+Safari/537.36 - 500 24 50 23
+#Software: Microsoft Internet Information Services 10.0
+#Version: 1.0
+#Date: 2024-05-01 22:24:05
+#Fields: date time s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs(User-Agent) cs(Referer) sc-status sc-substatus sc-win32-status time-taken
+2024-05-01 22:24:05 192.168.1.106 GET / - 3500 - 192.168.1.106 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/124.0.0.0+Safari/537.36 - 500 24 50 24
+2024-05-01 22:24:07 192.168.1.106 GET / - 3500 - 192.168.1.106 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/124.0.0.0+Safari/537.36 - 500 24 50 0
+2024-05-01 22:24:07 192.168.1.106 GET / - 3500 - 192.168.1.106 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/124.0.0.0+Safari/537.36 - 500 24 50 0
+2024-05-01 22:24:07 192.168.1.106 GET / - 3500 - 192.168.1.106 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/124.0.0.0+Safari/537.36 - 500 24 50 0
+#Software: Microsoft Internet Information Services 10.0
+#Version: 1.0
+#Date: 2024-05-01 22:25:12
+#Fields: date time s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs(User-Agent) cs(Referer) sc-status sc-substatus sc-win32-status time-taken
+2024-05-01 22:25:12 192.168.1.106 GET / - 3500 - 192.168.1.106 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/124.0.0.0+Safari/537.36 - 500 24 50 25
+#Software: Microsoft Internet Information Services 10.0
+#Version: 1.0
+#Date: 2024-05-01 22:25:42
+#Fields: date time s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs(User-Agent) cs(Referer) sc-status sc-substatus sc-win32-status time-taken
+2024-05-01 22:25:42 192.168.1.106 GET / - 3500 - 192.168.1.106 Mozilla/5.0+(Windows+NT+10.0;+Win64;+x64)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/124.0.0.0+Safari/537.36 - 500 24 50 24
